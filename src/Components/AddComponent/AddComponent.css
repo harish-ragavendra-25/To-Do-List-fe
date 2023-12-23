@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formcontainer {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.labelcontainer {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.inputcontainer {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#submitcontainer {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submitcontainer:hover {
+    background-color: #45a049;
+}
+
+
+.inputcontainer {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: black;
+    box-sizing: border-box;
+    border: 1px solid #8BC34A;
+    /* Change border color */
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    /* Change background color */
+    background-color: #E8F5E9;
+
+    /* Add focus styles */
+    &:focus {
+        border-color: #4CAF50;
+        /* Change border color on focus */
+        box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+        /* Change box shadow on focus */
+    }
+}
