@@ -15,8 +15,22 @@ const ListComponent = ({ list, index ,CheckFunction,DeleteFunction}) => {
             }}
           ></input>
         </label>
-        <span className="list" style={{textDecoration:list.completed ? 'line-through' : 'none'}}>{list.title}</span>
-        <button onClick={()=>{DeleteFunction(list)}} className="delete-btn">
+        <span
+          className="list"
+          style={
+            
+            { textDecoration: list.completed ? "line-through" : "none" }
+            
+          }
+        >
+          {list.title}
+        </span>
+        <button
+          onClick={() => {
+            DeleteFunction(list);
+          }}
+          className="delete-btn"
+        >
           <img
             width="24"
             height="24"

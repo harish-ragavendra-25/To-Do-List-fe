@@ -21,20 +21,20 @@ const AddComponent = ({list,setList}) => {
 
   const submitFunction = (e) => {
     e.preventDefault();
-    console.log(newList);
     axios
       .post(`http://localhost:3500/api/v1/list`, newList)
       .then((response) => {
         if (response) {
-          console.log(response);
-          window.location.href="/";
+          alert(`${response.data.title} is added!!`);
+          window.location.href="/"; 
         }
-        
       })
-      .catch((error) => console.log(error.response.data.message));
-    // // send data to back-end
-
-    // window.location.href='/';
+      .catch((error) => 
+      {
+        alert(error.response.data.message);
+        window.location.href='/list'
+      }
+      );
   }
 
   return (

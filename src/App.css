@@ -1,135 +1,276 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* HomeComponent.css */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+/* Container styling */
+div {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  /* Pale white background color */
+  text-align: center;
+  /* Center align text */
 }
 
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+/* Title styling */
+h1 {
+  font-size: 24px;
+  color: #000000;
+  /* Black font color */
 }
 
-body {
-  line-height: 1;
+/* Flex container for search bar, add button, and logo */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  /* Increased space */
 }
 
-ol,
-ul {
-  list-style: none;
+/* Search bar styling */
+.searchBar {
+  padding: 8px;
+  width: 60%;
+  /* Adjust the width as needed */
 }
 
-blockquote,
-q {
-  quotes: none;
+.searchicon {
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
+/* Add button styling */
+.add {
+  background-color: #4caf50;
+  color: #ffffff;
+  /* White font color */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  /* Border radius */
+  margin-left: 10px;
+  /* Add some margin */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  /* Smooth transition */
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.add:hover {
+  background-color: #45a049;
+  box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
+  /* Shadow effect on hover */
+  transform: scale(1.05);
+  /* Grow effect on hover */
+}
+
+.addimage {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Task styling */
+h2 {
+  font-size: 18px;
+  color: #000000;
+  /* Black font color */
+  margin-top: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+  h1 {
+    text-align: center;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    margin-top: 10px;
+    /* Adjusted space */
+  }
+
+  .searchBar {
+    width: 100%;
+    /* Take full width on small screens */
+    margin-top: 10px;
+    /* Add some spacing */
+  }
+}
+
+/* ListComponent.css */
+
+/* Card styling */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  /* Pale white background color */
+}
+
+/* Text container styling using Flexbox */
+.text-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Checkbox styling */
+#checkbox {
+  margin-right: 10px;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.checkbox-label {
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition for shadow */
+}
+
+.checkbox-icon {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #4caf50;
+  /* Checkbox border color */
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-label:hover .checkbox-icon {
+  background-color: #e6ffe6;
+  /* Light green background on hover */
+  border-color: #45a049;
+  /* Dark green border on hover */
+}
+
+.checkbox:checked+.checkbox-label .checkbox-icon {
+  background-color: #4caf50;
+  /* Green background when checked */
+  border-color: #45a049;
+  /* Dark green border when checked */
+}
+
+/* List item styling */
+.list {
+  flex-grow: 1;
+  word-wrap: break-word;
+  color: #000000;
+  /* Black font color */
+  position: relative;
+  transition: color 100ms ease, text-decoration 0.3s ease;
+}
+
+.list.completed {
+  color: #888888;
+  /* Color for completed tasks */
+  text-decoration: line-through;
+  /* Strikethrough effect */
+}
+
+/* Delete button styling */
+.delete-btn {
+  background-color: transparent;
+  /* Transparent background */
+  color: #000000;
+  /* Black font color */
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  /* Border radius */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transition */
+}
+
+.delete-btn:hover {
+  background-color: #ff3333;
+  /* Red background on hover */
+  box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+  /* Shadow effect on hover */
+}
+
+.delete-btn img {
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+/* AddComponent.css */
+
+/* Container styling */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  /* Pale white background color */
+}
+
+/* Form container styling */
+.formcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+.labelcontainer {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #000000;
+  /* Black font color */
+}
+
+/* Input styling */
+.inputcontainer {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+/* Submit button styling */
+#submitcontainer {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #ffffff;
+  /* White font color */
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  /* Border radius */
+  display: flex;
+  align-items: center;
+  /* Align items in the center */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transition */
+}
+
+#submitcontainer:hover {
+  background-color: #45a049;
+  box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
+  /* Shadow effect on hover */
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 768px) {
+
+  .container,
+  div {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .text-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #checkbox {
+    margin-bottom: 10px;
+  }
 }
